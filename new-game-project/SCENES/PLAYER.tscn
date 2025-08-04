@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmr1c1bijcj0y"]
+
+[ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_5f76o"]
+[ext_resource type="PackedScene" uid="uid://ci63ukouv85ys" path="res://ASSETS/MODELS/PLAYER/CAR.glb" id="1_5omnw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_acvk6"]
+size = Vector3(1.25638, 7.19696, 9.6205)
+
+[sub_resource type="Gradient" id="Gradient_qxtpp"]
+offsets = PackedFloat32Array(0.028169, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bob5a"]
+gradient = SubResource("Gradient_qxtpp")
+fill = 1
+fill_from = Vector2(0.492718, 0.497573)
+fill_to = Vector2(1, 0.533981)
+
+[sub_resource type="Gradient" id="Gradient_5fchi"]
+offsets = PackedFloat32Array(0.00704225, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0241i"]
+gradient = SubResource("Gradient_5fchi")
+fill = 1
+fill_from = Vector2(0.48301, 0.480583)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_5f76o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(20.5706, 0, 0, 0, 1, 0, 0, 0, 1, 2.39712, 1.397, 0.129539)
+shape = SubResource("BoxShape3D_acvk6")
+
+[node name="TransitionCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39712, 1.397, 0.129539)
+fov = 49.8
+
+[node name="FLASHLIGHT" type="SpotLight3D" parent="TransitionCamera"]
+transform = Transform3D(0.999608, 0, -0.0280084, 0, 1, 0, 0.0280084, 0, 0.999608, 0.00427127, -4.31538e-05, -0.00251412)
+light_color = Color(0.849621, 0.849621, 0.849621, 1)
+light_energy = 5.011
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 5.737
+light_projector = SubResource("GradientTexture2D_bob5a")
+light_size = 1.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 7.034
+spot_angle = 29.0652
+spot_angle_attenuation = 0.307786
+
+[node name="Camera01" type="Camera3D" parent="."]
+transform = Transform3D(-0.048536, 0, 0.998821, 0, 1, 0, -0.998821, 0, -0.048536, 1.33578, 3.45483, -2.80173)
+current = true
+fov = 49.7591
+
+[node name="Camera04" type="Camera3D" parent="."]
+transform = Transform3D(-0.452917, 0, -0.891553, 0, 1, 0, 0.891553, 0, -0.452917, 1.33578, 3.45483, -2.80173)
+fov = 49.7591
+
+[node name="Camera03" type="Camera3D" parent="."]
+transform = Transform3D(0.756025, 0, -0.654543, 0, 1, 0, 0.654543, 0, 0.756025, 1.33578, 3.45483, -2.80173)
+fov = 49.7591
+
+[node name="Camera02" type="Camera3D" parent="."]
+transform = Transform3D(-0.808196, 0, 0.588914, 0, 1, 0, -0.588914, 0, -0.808196, 1.33578, 3.45483, -2.80173)
+fov = 49.7591
+
+[node name="CAR2" parent="." instance=ExtResource("1_5omnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0338328, -0.00195312, 0.135384)
+
+[node name="FrontLIGHTS01" type="SpotLight3D" parent="."]
+transform = Transform3D(0.00370008, 0, 0.999993, 0, 1, 0, -0.999993, 0, 0.00370008, -10.8619, 0.689387, -2.53444)
+light_color = Color(0.94218, 0.660198, 0, 1)
+light_energy = 32.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 3.057
+light_projector = SubResource("GradientTexture2D_0241i")
+light_size = 1.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 12.12
+spot_angle = 27.0447
+spot_angle_attenuation = 0.933033
+
+[node name="FrontLIGHTS02" type="SpotLight3D" parent="."]
+transform = Transform3D(0.00370008, 0, 0.999993, 0, 1, 0, -0.999993, 0, 0.00370008, -10.8619, 0.689387, 2.78077)
+light_color = Color(0.94218, 0.660198, 0, 1)
+light_energy = 32.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 3.057
+light_projector = SubResource("GradientTexture2D_0241i")
+light_size = 1.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 12.12
+spot_angle = 27.04
+spot_angle_attenuation = 0.933033
+
+[node name="BackLIGHTS01" type="SpotLight3D" parent="."]
+transform = Transform3D(0.000663122, 0, -1, 0, 1, 0, 1, 0, 0.000663122, 15.7523, 0.689387, 2.78075)
+visible = false
+light_color = Color(0.941176, 0.101961, 0, 1)
+light_energy = 10.0
+light_indirect_energy = 0.0
+light_projector = SubResource("GradientTexture2D_0241i")
+light_size = 1.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 10.1607
+spot_angle = 41.5111
+spot_angle_attenuation = 0.5
+
+[node name="BackLIGHTS02" type="SpotLight3D" parent="."]
+transform = Transform3D(0.000663122, 0, -1, 0, 1, 0, 1, 0, 0.000663122, 15.7291, 0.689387, -2.53441)
+visible = false
+light_color = Color(0.941176, 0.101961, 0, 1)
+light_energy = 10.0
+light_indirect_energy = 0.0
+light_projector = SubResource("GradientTexture2D_0241i")
+light_size = 1.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 10.161
+spot_angle = 41.51
+spot_angle_attenuation = 0.5

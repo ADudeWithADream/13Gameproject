@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6dip1ofw7u3u"]
+
+[ext_resource type="PackedScene" uid="uid://bmr1c1bijcj0y" path="res://SCENES/PLAYER.tscn" id="1_2tg2b"]
+[ext_resource type="PackedScene" uid="uid://dde3kcixmmh4c" path="res://SCENES/COMPUTER.tscn" id="2_q1gam"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w6bqy"]
+sky_top_color = Color(0.0793935, 0.10381, 0.137764, 1)
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 0.1
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_energy_multiplier = 0.1
+
+[sub_resource type="Sky" id="Sky_xutl7"]
+sky_material = SubResource("ProceduralSkyMaterial_w6bqy")
+
+[sub_resource type="Environment" id="Environment_mn0p6"]
+background_mode = 2
+sky = SubResource("Sky_xutl7")
+tonemap_mode = 2
+ssao_radius = 8.66
+ssao_intensity = 7.05
+sdfgi_enabled = true
+glow_enabled = true
+fog_light_energy = 0.16
+fog_density = 0.0047
+fog_sky_affect = 0.226
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.336608, 0.336608, 0.336608, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mn0p6")
+
+[node name="FLOOR" type="CSGBox3D" parent="."]
+transform = Transform3D(129.25, 0, 0, 0, 0.262165, 0, 0, 0, 129.912, 0, 0, 0)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_2tg2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00697517, 2.35191, 0.157555)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("2_q1gam")]
+transform = Transform3D(0.536622, 0, -0.843823, 0, 1, 0, 0.843823, 0, 0.536622, -2.98638, 5.20992, 1.73141)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.961233, -0.249475, 0.117447, -0.275738, -0.869678, 0.409425, 0, -0.425937, -0.904753, 0.00175238, -0.0202389, -0.0059166)
+light_color = Color(0.300171, 0.350298, 0.370165, 1)
+light_energy = 0.314
+shadow_enabled = true
