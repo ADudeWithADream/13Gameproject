@@ -26,16 +26,20 @@ func _input(event: InputEvent) -> void:
 		LightOn = true
 	elif $TransitionCamera/FLASHLIGHT.visible == false:
 		LightOn = false
-	print("works")
+	
+
 
 
 func _change_camera(desired_camera: Camera3D) -> void:
+	
+	_toggle_flashlight(false)
 	
 	if TransitionTween and SpecializedTransition == false:
 		TransitionTween.kill()
 	TransitionTween = create_tween()
 	var target_transform: Transform3D = desired_camera.global_transform
 	TransitionTween.tween_property(TransitionCamera, "global_transform", target_transform, 0.5).set_trans(Tween.TRANS_SINE)
+	TransitionTween.tween_callback(_toggle_flashlight.bind(true))
 	
 	if TransitionFOVTween and SpecializedTransition == false:
 		TransitionFOVTween.kill()
@@ -48,6 +52,8 @@ func _change_camera(desired_camera: Camera3D) -> void:
 		TransitionFOVTween.tween_property(TransitionCamera, "fov", target_FOV, 0.2).set_trans(Tween.TRANS_SINE)
 	
 	selected_camera = desired_camera
+
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -82,3 +88,8 @@ func _physics_process(delta: float) -> void:
 			_change_camera($Camera04)
 		elif selected_camera == $Camera04:
 			_change_camera($Camera01)
+
+
+func _toggle_flashlight(state: bool):
+	$TransitionCamera/FLASHLIGHT.visible = state
+	LightOn = state
