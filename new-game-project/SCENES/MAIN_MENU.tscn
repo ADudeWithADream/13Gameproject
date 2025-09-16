@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1f46umkm5f8r"]
+
+[ext_resource type="Texture2D" uid="uid://cvue3guhf4kej" path="res://ASSETS/Screenshot 2025-08-22 at 9.20.36 AM.png" id="1_kb7mp"]
+[ext_resource type="FontFile" uid="uid://cadfcsoqnmc8g" path="res://ASSETS/GrapeSoda.ttf" id="2_pas7n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6d72n"]
+texture = ExtResource("1_kb7mp")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kijc"]
+bg_color = Color(0.00119745, 0.00119745, 0.00119744, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6d72n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 20.0
+offset_right = 128.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1kijc")
+text = "START"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1kijc")
+text = "SETTINGS"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1kijc")
+text = "QUIT"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.5
+offset_top = -224.0
+offset_right = 189.5
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = -20
+theme_override_fonts/font = ExtResource("2_pas7n")
+theme_override_font_sizes/font_size = 102
+text = "DELIVERY"
+horizontal_alignment = 1
+vertical_alignment = 1
