@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b483so2tj4dtr"]
+[gd_scene load_steps=4 format=3 uid="uid://b483so2tj4dtr"]
 
 [ext_resource type="PackedScene" uid="uid://yy0cavuogxf7" path="res://ASSETS/MODELS/PLAYER/MONSTERFACE.glb" id="1_2cgyw"]
+[ext_resource type="Script" path="res://SCENES/monster.gd" id="1_bvvot"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l8ace"]
 size = Vector3(0.735001, 4.98236, 3.47778)
 
 [node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_bvvot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0565567, -0.0762634, -0.00280762)
