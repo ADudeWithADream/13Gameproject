@@ -15,3 +15,9 @@ shape = SubResource("BoxShape3D_l8ace")
 
 [node name="MONSTERFACE" parent="." instance=ExtResource("1_2cgyw")]
 transform = Transform3D(0.961564, 0, 0.27458, 0, 1, 0, -0.27458, 0, 0.961564, 0.0474584, -1.47014, -0.00897312)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

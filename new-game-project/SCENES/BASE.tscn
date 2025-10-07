@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6dip1ofw7u3u"]
+[gd_scene load_steps=7 format=3 uid="uid://b6dip1ofw7u3u"]
 
 [ext_resource type="PackedScene" uid="uid://bmr1c1bijcj0y" path="res://SCENES/PLAYER.tscn" id="1_2tg2b"]
 [ext_resource type="PackedScene" uid="uid://dde3kcixmmh4c" path="res://SCENES/COMPUTER.tscn" id="2_q1gam"]
+[ext_resource type="PackedScene" uid="uid://b483so2tj4dtr" path="res://SCENES/monster.tscn" id="3_kac56"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w6bqy"]
 sky_top_color = Color(0.0793935, 0.10381, 0.137764, 1)
@@ -48,10 +49,16 @@ light_energy = 0.314
 shadow_enabled = true
 
 [node name="monsterposition1" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26658, 5.22283, -5.74098)
 
 [node name="monsterposition2" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9366, 5.22283, 0.176896)
 
 [node name="monsterposition3" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.798558, 5.22283, 6.73352)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("3_kac56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8914, 75.5514, 114.89)
