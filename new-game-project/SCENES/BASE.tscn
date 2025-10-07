@@ -46,3 +46,12 @@ transform = Transform3D(0.961233, -0.249475, 0.117447, -0.275738, -0.869678, 0.4
 light_color = Color(0.300171, 0.350298, 0.370165, 1)
 light_energy = 0.314
 shadow_enabled = true
+
+[node name="monsterposition1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26658, 5.22283, -5.74098)
+
+[node name="monsterposition2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9366, 5.22283, 0.176896)
+
+[node name="monsterposition3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.798558, 5.22283, 6.73352)
