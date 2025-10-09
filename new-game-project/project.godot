@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Y13HorrorGame"
-run/main_scene="res://SCENES/BASE.tscn"
+run/main_scene="res://SCENES/MAIN_MENU.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [display]
 

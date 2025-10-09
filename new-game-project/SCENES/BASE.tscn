@@ -26,7 +26,8 @@ fog_light_energy = 0.16
 fog_density = 0.0047
 fog_sky_affect = 0.226
 volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0.336608, 0.336608, 0.336608, 1)
+volumetric_fog_density = 0.6421
+volumetric_fog_albedo = Color(0.156675, 0.156675, 0.156675, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -48,17 +49,15 @@ light_color = Color(0.300171, 0.350298, 0.370165, 1)
 light_energy = 0.314
 shadow_enabled = true
 
-[node name="monsterposition1" type="Node3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26658, 5.22283, -5.74098)
+[node name="place1" type="Node3D" parent="."]
+transform = Transform3D(-0.413756, 0, -0.910388, 0, 1, 0, 0.910388, 0, -0.413756, 4.26658, 5.22283, -5.74098)
 
-[node name="monsterposition2" type="Node3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9366, 5.22283, 0.176896)
+[node name="place2" type="Node3D" parent="."]
+transform = Transform3D(-0.87825, 0, 0.478201, 0, 1, 0, -0.478201, 0, -0.87825, 4.09639, 5.83821, -1.20448)
 
-[node name="monsterposition3" type="Node3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.798558, 5.22283, 6.73352)
+[node name="place3" type="Node3D" parent="."]
+transform = Transform3D(0.130128, 0, 0.991497, 0, 1, 0, -0.991497, 0, 0.130128, -0.798557, 5.22283, 6.73352)
 
-[node name="StaticBody3D2" parent="." instance=ExtResource("3_kac56")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8914, 75.5514, 114.89)
+[node name="StaticBody3D2" parent="." node_paths=PackedStringArray("arr") instance=ExtResource("3_kac56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9406, 3.98779, -2.78065)
+arr = [NodePath("../place1"), NodePath("../place2"), NodePath("../place3")]

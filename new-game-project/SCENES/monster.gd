@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-var arr = [%monsterposition1, %monsterposition2, %monsterposition3]
+@export var arr: Array[Node3D] = []
 var idx = randi_range(0, arr.size() - 1)
 
 
@@ -16,5 +16,8 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
-	position = global_position == arr[idx].global_position
+ # Replace with function body.
+	idx = randi_range(0, arr.size() - 1)
+	global_position = arr[idx].global_position
+	rotation = arr[idx].rotation
+	print("did it")
