@@ -17,6 +17,8 @@ sky_material = SubResource("ProceduralSkyMaterial_w6bqy")
 [sub_resource type="Environment" id="Environment_mn0p6"]
 background_mode = 2
 sky = SubResource("Sky_xutl7")
+ambient_light_color = Color(0, 0, 0.286275, 1)
+ambient_light_energy = 1.76
 tonemap_mode = 2
 ssao_radius = 8.66
 ssao_intensity = 7.05
@@ -26,8 +28,8 @@ fog_light_energy = 0.16
 fog_density = 0.0047
 fog_sky_affect = 0.226
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.6421
-volumetric_fog_albedo = Color(0.156675, 0.156675, 0.156675, 1)
+volumetric_fog_density = 0.15
+volumetric_fog_albedo = Color(0.202118, 0.206498, 0.323423, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -59,5 +61,5 @@ transform = Transform3D(-0.87825, 0, 0.478201, 0, 1, 0, -0.478201, 0, -0.87825, 
 transform = Transform3D(0.130128, 0, 0.991497, 0, 1, 0, -0.991497, 0, 0.130128, -0.798557, 5.22283, 6.73352)
 
 [node name="StaticBody3D2" parent="." node_paths=PackedStringArray("arr") instance=ExtResource("3_kac56")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9406, 3.98779, -2.78065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9406, 44.5367, -2.78065)
 arr = [NodePath("../place1"), NodePath("../place2"), NodePath("../place3")]
