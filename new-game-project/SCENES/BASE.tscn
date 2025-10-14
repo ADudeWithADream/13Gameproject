@@ -51,15 +51,17 @@ light_color = Color(0.300171, 0.350298, 0.370165, 1)
 light_energy = 0.314
 shadow_enabled = true
 
-[node name="place1" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="place1" type="Node3D" parent="Node3D"]
 transform = Transform3D(-0.413756, 0, -0.910388, 0, 1, 0, 0.910388, 0, -0.413756, 4.26658, 5.22283, -5.74098)
 
-[node name="place2" type="Node3D" parent="."]
+[node name="place2" type="Node3D" parent="Node3D"]
 transform = Transform3D(-0.87825, 0, 0.478201, 0, 1, 0, -0.478201, 0, -0.87825, 4.09639, 5.83821, -1.20448)
 
-[node name="place3" type="Node3D" parent="."]
+[node name="place3" type="Node3D" parent="Node3D"]
 transform = Transform3D(0.130128, 0, 0.991497, 0, 1, 0, -0.991497, 0, 0.130128, -0.798557, 5.22283, 6.73352)
 
-[node name="StaticBody3D2" parent="." node_paths=PackedStringArray("arr") instance=ExtResource("3_kac56")]
+[node name="StaticBody3D2" parent="." node_paths=PackedStringArray("array_parent") instance=ExtResource("3_kac56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9406, 44.5367, -2.78065)
-arr = [NodePath("../place1"), NodePath("../place2"), NodePath("../place3")]
+array_parent = NodePath("../Node3D")

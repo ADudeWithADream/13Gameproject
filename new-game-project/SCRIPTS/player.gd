@@ -2,21 +2,19 @@ extends CharacterBody3D
 
 @onready var TransitionCamera: Camera3D = $TransitionCamera
 @onready var selected_camera: Camera3D = $Camera01
-
 var TransitionTween: Tween
 var TransitionFOVTween: Tween
 var SpecializedTransition = false
-
 var LightOn = false
+
 
 func _ready() -> void:
 	$TransitionCamera.make_current()
 	_change_camera($Camera01)
 
 
+#produces ligt through light node
 func _input(event: InputEvent) -> void:
-
-	
 	if Input.is_action_just_pressed("ui_flashlight") and LightOn == false:
 		$TransitionCamera/FLASHLIGHT.visible = true
 	elif Input.is_action_just_pressed("ui_flashlight") and LightOn == true:
@@ -26,10 +24,9 @@ func _input(event: InputEvent) -> void:
 		LightOn = true
 	elif $TransitionCamera/FLASHLIGHT.visible == false:
 		LightOn = false
-	
 
 
-
+#runs tween and then runs tween callback. Tween must be run before Tween callback can be run
 func _change_camera(desired_camera: Camera3D) -> void:
 	var current_state = LightOn
 	_toggle_flashlight(false)
@@ -53,9 +50,8 @@ func _change_camera(desired_camera: Camera3D) -> void:
 	
 	selected_camera = desired_camera
 
-	
 
-
+#Runs camera actions depending on if certai cameras are selected and if certain buttons are pressed
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_left") and selected_camera == $Camera01:
